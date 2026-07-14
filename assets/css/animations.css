@@ -35,34 +35,3 @@
     opacity: 1;
     transform: translateY(0);
 }
-
-/* ===== TIPO DE ESCRITURA ===== */
-.typewriter {
-    overflow: hidden;
-    border-right: 3px solid var(--accent);
-    white-space: nowrap;
-    animation: typewriter 2s steps(20) 0.5s forwards, blink 0.8s step-end infinite;
-    width: 0;
-    display: inline-block;
-}
-
-@keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* ===== PARALLAX (se aplica con JS) ===== */
-.parallax-bg {
-    will-change: transform;
-    transition: transform 0.1s linear;
-}
-
-/* ===== LOADER ===== */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}

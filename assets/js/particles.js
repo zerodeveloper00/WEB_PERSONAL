@@ -1,4 +1,3 @@
-// ===== PARTÍCULAS CON CAMBIO DE COLOR =====
 (function() {
     const canvas = document.getElementById('particles-canvas');
     if (!canvas) return;
@@ -6,8 +5,6 @@
     let width, height;
     let particles = [];
     let mouse = { x: null, y: null };
-    let colorIndex = 0;
-    const colors = ['#38bdf8', '#a78bfa', '#f472b6', '#34d399', '#fbbf24'];
 
     function resize() {
         width = canvas.width = window.innerWidth;
@@ -19,8 +16,6 @@
     document.addEventListener('mousemove', (e) => {
         mouse.x = e.clientX;
         mouse.y = e.clientY;
-        // Cambiar color al mover el mouse
-        colorIndex = (colorIndex + 1) % colors.length;
     });
 
     document.addEventListener('mouseleave', () => {
@@ -33,10 +28,9 @@
             this.x = Math.random() * width;
             this.y = Math.random() * height;
             this.size = Math.random() * 2.5 + 0.5;
-            this.speedX = (Math.random() - 0.5) * 0.5;
-            this.speedY = (Math.random() - 0.5) * 0.5;
-            this.opacity = Math.random() * 0.6 + 0.2;
-            this.color = colors[Math.floor(Math.random() * colors.length)];
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.speedY = (Math.random() - 0.5) * 0.3;
+            this.opacity = Math.random() * 0.5 + 0.1;
         }
 
         update() {
@@ -44,12 +38,10 @@
                 const dx = mouse.x - this.x;
                 const dy = mouse.y - this.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 150) {
-                    const force = (150 - distance) / 150;
-                    this.x += dx * force * 0.02;
-                    this.y += dy * force * 0.02;
-                    // Cambiar color gradualmente al acercarse al mouse
-                    this.color = colors[colorIndex];
+                if (distance < 200) {
+                    const force = (200 - distance) / 200;
+                    this.x += dx * force * 0.015;
+                    this.y += dy * force * 0.015;
                 }
             }
             this.x += this.speedX;
@@ -61,15 +53,15 @@
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = this.color;
-            ctx.shadowColor = this.color;
-            ctx.shadowBlur = 15;
+            ctx.fillStyle = `rgba(0, 229, 255, ${this.opacity})`;
+            ctx.shadowColor = '#00e5ff';
+            ctx.shadowBlur = 8;
             ctx.fill();
             ctx.shadowBlur = 0;
         }
     }
 
-    function initParticles(count = 120) {
+    function initParticles(count = 100) {
         particles = [];
         for (let i = 0; i < count; i++) {
             particles.push(new Particle());
@@ -84,11 +76,11 @@
                 const dy = particles[a].y - particles[b].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 if (distance < 150) {
-                    const opacity = 0.3 * (1 - distance / 150);
+                    const opacity = 0.2 * (1 - distance / 150);
                     ctx.beginPath();
                     ctx.moveTo(particles[a].x, particles[a].y);
                     ctx.lineTo(particles[b].x, particles[b].y);
-                    ctx.strokeStyle = `rgba(56, 189, 248, ${opacity})`;
+                    ctx.strokeStyle = `rgba(0, 229, 255, ${opacity})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
