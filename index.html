@@ -9,27 +9,32 @@
     <link rel="stylesheet" href="/WEB_PERSONAL/assets/css/animations.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+    <!-- Canvas para partículas -->
+    <canvas id="particles-canvas"></canvas>
+
     <div id="navbar"></div>
 
-    <!-- HEADER CON ANIMACIONES MEJORADAS -->
-    <header id="main-header" class="animate-gradient">
-        <div class="container">
+    <header id="main-header">
+        <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="animate-typewriter">Daniel Cortez</h1>
+                <p class="greeting animate-fade-in">👋 Hola, soy</p>
+                <h1 class="typewriter">Daniel Cortez</h1>
                 <p class="subtitle animate-fade-in-delay">Estudiante de Ingeniería en Ciberseguridad</p>
                 <p class="description animate-fade-in-delay-2">Soporte Técnico | Redes | Seguridad Informática</p>
                 <div class="hero-buttons">
-                    <a href="/WEB_PERSONAL/pages/about.html" class="btn btn-primary animate-pulse">Conóceme</a>
-                    <a href="/WEB_PERSONAL/pages/contact.html" class="btn btn-secondary animate-fade-in-delay-2">Contacto</a>
+                    <a href="/WEB_PERSONAL/pages/about.html" class="btn btn-primary btn-glow">Conóceme</a>
+                    <a href="/WEB_PERSONAL/pages/contact.html" class="btn btn-secondary btn-glow">Contacto</a>
                 </div>
             </div>
         </div>
     </header>
 
     <div id="footer"></div>
+
+    <script src="/WEB_PERSONAL/assets/js/particles.js"></script>
     <script src="/WEB_PERSONAL/assets/js/script.js"></script>
 </body>
 </html>

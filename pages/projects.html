@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="/WEB_PERSONAL/assets/css/animations.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+    <canvas id="particles-canvas"></canvas>
     <div id="navbar"></div>
 
     <main class="page-content">
         <div class="container">
-            <h2 class="page-title animate-bounce-in">Proyectos</h2>
+            <h2 class="page-title reveal">Proyectos</h2>
             <div class="projects-grid">
-                <div class="project-card hover-rotate scroll-animate">
+                <div class="project-card glass-card reveal">
                     <h3>SENATI – Proyectos Académicos</h3>
                     <p><em>Enero 2026 – Presente</em></p>
                     <ul>
@@ -29,7 +30,7 @@
                         <li>Prácticas de ciberseguridad y Cisco Packet Tracer.</li>
                     </ul>
                 </div>
-                <div class="project-card hover-rotate scroll-animate">
+                <div class="project-card glass-card reveal">
                     <h3>Proyectos Personales de Soporte Técnico</h3>
                     <p><em>Presente</em></p>
                     <ul>
@@ -44,6 +45,7 @@
     </main>
 
     <div id="footer"></div>
+    <script src="/WEB_PERSONAL/assets/js/particles.js"></script>
     <script src="/WEB_PERSONAL/assets/js/script.js"></script>
 </body>
 </html>
