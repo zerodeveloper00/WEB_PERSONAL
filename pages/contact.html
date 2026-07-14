@@ -12,9 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- Canvas de partículas (opcional, si quieres quitarlas elimina esta línea) -->
     <canvas id="particles-canvas"></canvas>
-
     <div id="navbar"></div>
 
     <main class="page-content">
@@ -31,23 +29,15 @@
                         </a>
                     </p>
                 </div>
-
-                <!-- FORMULARIO CON FORMPREE -->
                 <form id="contact-form" class="contact-form">
-                    <!-- Campos ocultos para Formspree -->
                     <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portafolio Web" />
-                    <!-- _captcha activa el captcha de Formspree (opcional pero recomendado) -->
                     <input type="hidden" name="_captcha" value="true" />
-
                     <input type="text" name="nombre" placeholder="Tu nombre" required />
                     <input type="email" name="email" placeholder="Tu correo electrónico" required />
                     <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                    
                     <button type="submit" class="btn btn-primary btn-glow" id="submit-btn">
                         Enviar mensaje 🚀
                     </button>
-
-                    <!-- Contenedor para mensaje de éxito/error -->
                     <div id="form-status" style="margin-top: 1.5rem; text-align: center; font-weight: 600;"></div>
                 </form>
             </div>
@@ -56,64 +46,41 @@
 
     <div id="footer"></div>
 
-    <!-- Scripts -->
     <script src="/WEB_PERSONAL/assets/js/particles.js"></script>
     <script src="/WEB_PERSONAL/assets/js/script.js"></script>
-
-    <!-- Lógica del formulario (fetch a Formspree) -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contact-form');
             const statusDiv = document.getElementById('form-status');
             const submitBtn = document.getElementById('submit-btn');
-
-            // ⚠️ ¡IMPORTANTE! Reemplaza "TU_CODIGO_UNICO" con el código que te dio Formspree
-            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqvzvad';
+            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/tu_codigo_unico'; // Reemplaza con tu código
 
             form.addEventListener('submit', function(e) {
-                e.preventDefault(); // Evita que la página se recargue
-
-                // Deshabilitar botón para evitar envíos dobles
+                e.preventDefault();
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Enviando... ⏳';
-                statusDiv.innerHTML = ''; // Limpiar mensajes anteriores
-
+                statusDiv.innerHTML = '';
                 const formData = new FormData(form);
-
                 fetch(FORMSPREE_ENDPOINT, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 })
                 .then(response => {
                     if (response.ok) {
-                        // ÉXITO
                         statusDiv.innerHTML = '✅ ¡Mensaje enviado con éxito! Te responderé pronto.';
-                        statusDiv.style.color = '#4ade80'; // Verde neón
-                        statusDiv.style.textShadow = '0 0 20px rgba(74, 222, 128, 0.3)';
-                        form.reset(); // Limpiar el formulario
+                        statusDiv.style.color = '#4ade80';
+                        form.reset();
                     } else {
-                        // ERROR en la respuesta
-                        response.json().then(data => {
-                            if (Object.hasOwn(data, 'error')) {
-                                statusDiv.innerHTML = '❌ Error: ' + data.error.message;
-                            } else {
-                                statusDiv.innerHTML = '❌ Ocurrió un error inesperado. Intenta de nuevo.';
-                            }
-                            statusDiv.style.color = '#f87171';
-                        });
+                        statusDiv.innerHTML = '❌ Ocurrió un error. Intenta de nuevo.';
+                        statusDiv.style.color = '#f87171';
                     }
                 })
-                .catch(error => {
-                    // Error de red
-                    statusDiv.innerHTML = '❌ Error de conexión. Revisa tu internet e inténtalo de nuevo.';
+                .catch(() => {
+                    statusDiv.innerHTML = '❌ Error de conexión. Revisa tu internet.';
                     statusDiv.style.color = '#f87171';
-                    console.error('Error:', error);
                 })
                 .finally(() => {
-                    // Reactivar botón
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Enviar mensaje 🚀';
                 });

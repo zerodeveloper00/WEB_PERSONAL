@@ -1,4 +1,3 @@
-/* ===== BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -51,7 +50,6 @@ body::before {
     z-index: 1;
 }
 
-/* ===== NAVBAR ===== */
 .navbar {
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(15px);
@@ -126,7 +124,6 @@ body::before {
     border-radius: 5px;
 }
 
-/* ===== HERO ===== */
 #main-header {
     min-height: 90vh;
     display: flex;
@@ -217,7 +214,6 @@ body::before {
     box-shadow: 0 0 60px rgba(56, 189, 248, 0.6);
 }
 
-/* ===== PÁGINAS INTERNAS ===== */
 .page-content {
     padding: 4rem 0;
     min-height: 70vh;
@@ -235,7 +231,6 @@ body::before {
     background-clip: text;
 }
 
-/* ===== ABOUT ===== */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -272,7 +267,6 @@ body::before {
     box-shadow: 0 20px 60px rgba(56, 189, 248, 0.2);
 }
 
-/* ===== CERTIFICACIONES ===== */
 .cert-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -300,7 +294,10 @@ body::before {
     margin-bottom: 0.3rem;
 }
 
-/* ===== PROYECTOS ===== */
+.cert-card p {
+    color: #94a3b8;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -327,7 +324,18 @@ body::before {
     color: #38bdf8;
 }
 
-/* ===== CONTACTO ===== */
+.project-card ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    color: #cbd5e1;
+    list-style: none;
+}
+
+.project-card ul li::before {
+    content: '▹ ';
+    color: #38bdf8;
+}
+
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -339,6 +347,11 @@ body::before {
     border: 1px solid rgba(56, 189, 248, 0.08);
 }
 
+.contact-info p {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+}
+
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -348,17 +361,22 @@ body::before {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.03);
     color: #f1f5f9;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
 }
 
-/* ===== FOOTER ===== */
+.contact-form button {
+    width: 100%;
+}
+
 .footer {
     background: rgba(15, 23, 42, 0.7);
     backdrop-filter: blur(10px);
@@ -371,4 +389,27 @@ body::before {
 .footer p {
     color: #94a3b8;
     margin: 0.3rem 0;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(56, 189, 248, 0.2);
+    box-shadow: 0 12px 48px rgba(56, 189, 248, 0.1);
+}
+
+.card-3d {
+    perspective: 800px;
+    transition: transform 0.3s;
+}
+
+.card-3d:hover {
+    transform: rotateY(5deg) rotateX(2deg) scale(1.02);
 }

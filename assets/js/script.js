@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarContainer = document.getElementById('navbar');
     const footerContainer = document.getElementById('footer');
 
-    // Cargar navbar
     fetch(basePath + '/components/navbar.html')
         .then(response => response.text())
         .then(data => {
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(err => console.warn('Error al cargar navbar:', err));
 
-    // Cargar footer
     fetch(basePath + '/components/footer.html')
         .then(response => response.text())
         .then(data => {
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(err => console.warn('Error al cargar footer:', err));
 
-    // ===== ANIMACIONES SCROLL =====
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
