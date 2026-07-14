@@ -1,21 +1,45 @@
-/* ===== TABLETS ===== */
+/* ============================================
+   RESPONSIVE: MÓVILES Y TABLETS
+   ============================================ */
+
+/* ===== TABLETS (pantallas medianas) ===== */
 @media (max-width: 992px) {
     .hero-title {
-        font-size: 3.8rem;
+        font-size: 3.5rem;
     }
 
     .process-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        gap: 1.8rem;
     }
 
     .section-title {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
+    }
+
+    .about-grid,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image {
+        order: -1;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 250px;
+    }
+
+    .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* ===== MÓVILES ===== */
+/* ===== MÓVILES (pantallas pequeñas) ===== */
 @media (max-width: 768px) {
+    /* ---- NAVBAR Y MENÚ HAMBURGUESA ---- */
     .nav-links {
         display: none;
         flex-direction: column;
@@ -26,8 +50,9 @@
         top: 70px;
         left: 0;
         right: 0;
-        padding: 2rem;
+        padding: 2rem 1.5rem;
         border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+        z-index: 999;
     }
 
     .nav-links.active {
@@ -35,15 +60,73 @@
     }
 
     .menu-toggle {
-        display: flex;
+        display: flex !important; /* Asegura que el botón se vea */
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
     }
 
+    .menu-toggle span {
+        width: 28px;
+        height: 3px;
+        background: #f1f5f9;
+        border-radius: 3px;
+        transition: all 0.3s;
+    }
+
+    /* Animación del menú hamburguesa al abrir (opcional) */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ---- HERO ---- */
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
+        line-height: 1.2;
     }
 
     .hero-description {
         font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .hero-tagline {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .scroll-indicator {
+        margin-top: 2.5rem;
+        font-size: 0.65rem;
+    }
+
+    /* ---- SECCIÓN DE PROCESO ---- */
+    .section-process {
+        padding: 4rem 0;
     }
 
     .process-grid {
@@ -51,38 +134,152 @@
         gap: 1.5rem;
     }
 
-    .section-title {
-        font-size: 1.8rem;
+    .neon-card {
+        padding: 1.8rem 1.5rem;
+        border-left: 3px solid #00e5ff;
     }
 
     .step-number {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
-    .btn {
-        padding: 0.8rem 2rem;
-        font-size: 0.95rem;
+    .step-title {
+        font-size: 1.1rem;
+    }
+
+    .step-description {
+        font-size: 0.9rem;
+    }
+
+    /* ---- CTA ---- */
+    .section-cta {
+        padding: 3.5rem 0;
+    }
+
+    .section-cta h2 {
+        font-size: 2rem;
+    }
+
+    /* ---- PÁGINAS INTERNAS ---- */
+    .page-content {
+        padding: 3rem 0;
     }
 
     .page-title {
         font-size: 2.2rem;
     }
 
-    .scroll-indicator {
-        margin-top: 2.5rem;
+    /* ---- TARJETAS ---- */
+    .glass-card {
+        padding: 1.5rem;
     }
 
-    .section-cta h2 {
-        font-size: 2rem;
+    /* ---- CERTIFICACIONES ---- */
+    .cert-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    /* ---- PROYECTOS ---- */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* ---- CONTACTO ---- */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.8rem;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem;
+        padding: 0.8rem 1rem;
+    }
+
+    /* ---- SOBRE MÍ ---- */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem;
+    }
+
+    .skills-list li {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .about-image img {
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer {
+        padding: 1.8rem 0;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
     }
 }
 
+/* ===== MÓVILES MUY PEQUEÑOS (menos de 400px) ===== */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-cta h2 {
+        font-size: 1.6rem;
     }
 
     .container {
-        padding: 0 1.2rem;
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        max-width: 220px;
+        font-size: 0.85rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    .step-number {
+        font-size: 1.8rem;
+    }
+
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-wrapper {
+        padding: 1.2rem;
     }
 }
