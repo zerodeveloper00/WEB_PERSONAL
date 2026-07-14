@@ -1,38 +1,33 @@
 /* ===== TABLETS ===== */
-@media (max-width: 1024px) {
-    .container {
-        padding: 0 1.5rem;
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3.8rem;
     }
 
-    .typewriter {
-        font-size: 3.5rem;
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
     }
 
-    .subtitle {
-        font-size: 1.5rem;
-    }
-
-    .about-grid,
-    .projects-grid,
-    .contact-wrapper {
-        gap: 2rem;
+    .section-title {
+        font-size: 2.2rem;
     }
 }
 
+/* ===== MÓVILES ===== */
 @media (max-width: 768px) {
-    /* NAVBAR MÓVIL */
     .nav-links {
         display: none;
         flex-direction: column;
-        gap: 0.5rem;
-        background: rgba(15, 23, 42, 0.95);
-        backdrop-filter: blur(15px);
+        gap: 0.8rem;
+        background: rgba(11, 13, 23, 0.98);
+        backdrop-filter: blur(12px);
         position: absolute;
         top: 70px;
         left: 0;
         right: 0;
         padding: 2rem;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid rgba(0, 229, 255, 0.1);
     }
 
     .nav-links.active {
@@ -43,124 +38,51 @@
         display: flex;
     }
 
-    /* HERO */
-    .typewriter {
+    .hero-title {
         font-size: 2.8rem;
-        white-space: normal;
-        border-right: none;
-        animation: none;
-        width: 100%;
     }
 
-    .subtitle {
-        font-size: 1.3rem;
-    }
-
-    .description {
+    .hero-description {
         font-size: 1rem;
     }
 
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .step-number {
+        font-size: 2.5rem;
     }
 
     .btn {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
+        padding: 0.8rem 2rem;
+        font-size: 0.95rem;
     }
 
-    /* PÁGINAS INTERNAS */
     .page-title {
         font-size: 2.2rem;
     }
 
-    .about-grid,
-    .projects-grid,
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .scroll-indicator {
+        margin-top: 2.5rem;
     }
 
-    .about-image {
-        order: -1;
-        text-align: center;
-    }
-
-    .about-image img {
-        max-width: 250px;
-    }
-
-    .skills-list {
-        grid-template-columns: 1fr;
-    }
-
-    .cert-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-wrapper {
-        padding: 1.5rem;
-    }
-
-    /* TOGGLE */
-    .theme-toggle {
-        top: 1rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
-    }
-
-    .theme-icon {
-        font-size: 1.2rem;
+    .section-cta h2 {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
-    }
-
-    .typewriter {
+    .hero-title {
         font-size: 2.2rem;
     }
 
-    .greeting {
-        font-size: 1rem;
-    }
-
-    .subtitle {
-        font-size: 1.1rem;
-    }
-
-    .page-title {
-        font-size: 1.8rem;
-    }
-
-    .project-card {
-        padding: 1.5rem;
-    }
-
-    .project-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .cert-card {
-        padding: 1.2rem;
-    }
-
-    .about-text h3 {
-        font-size: 1.3rem;
-    }
-
-    .contact-info p {
-        font-size: 0.95rem;
-    }
-
-    .btn {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.95rem;
+    .container {
+        padding: 0 1.2rem;
     }
 }

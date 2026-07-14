@@ -3,48 +3,97 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daniel Cortez | Inicio</title>
+    <title>Daniel Cortez | CyberSec</title>
     <link rel="stylesheet" href="/WEB_PERSONAL/assets/css/style.css" />
     <link rel="stylesheet" href="/WEB_PERSONAL/assets/css/responsive.css" />
     <link rel="stylesheet" href="/WEB_PERSONAL/assets/css/animations.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- Loader -->
-    <div id="loader">
-        <div class="spinner"></div>
-        <p>Cargando...</p>
-    </div>
-
-    <!-- Canvas de partículas -->
+    <!-- Partículas opcionales (comentar si no se quieren) -->
     <canvas id="particles-canvas"></canvas>
-
-    <!-- Toggle de tema (modo oscuro/claro) -->
-    <div class="theme-toggle" id="themeToggle">
-        <span class="theme-icon">🌙</span>
-    </div>
 
     <div id="navbar"></div>
 
     <header id="main-header">
         <div class="container hero-container">
             <div class="hero-content">
-                <p class="greeting animate-fade-in">👋 Hola, soy</p>
-                <h1 class="typewriter">Daniel Cortez</h1>
-                <p class="subtitle animate-fade-in-delay">Estudiante de Ingeniería en Ciberseguridad</p>
-                <p class="description animate-fade-in-delay-2">Soporte Técnico | Redes | Seguridad Informática</p>
+                <p class="hero-tagline">⚡ CIBERSEGURIDAD · REDES · SOPORTE</p>
+                <h1 class="hero-title">
+                    Protegiendo el futuro<br />
+                    <span class="highlight">digital</span>
+                </h1>
+                <p class="hero-description">
+                    Estudiante de Ingeniería en Ciberseguridad con pasión por las redes Cisco,
+                    administración de sistemas y resolución de problemas. Listo para asegurar
+                    tu infraestructura.
+                </p>
                 <div class="hero-buttons">
-                    <a href="/WEB_PERSONAL/pages/about.html" class="btn btn-primary btn-glow">Conóceme</a>
-                    <a href="/WEB_PERSONAL/pages/contact.html" class="btn btn-secondary btn-glow">Contacto</a>
+                    <a href="/WEB_PERSONAL/pages/about.html" class="btn btn-primary glow">Conóceme</a>
+                    <a href="/WEB_PERSONAL/pages/contact.html" class="btn btn-secondary">Contacto</a>
+                </div>
+                <div class="scroll-indicator">
+                    <span>DESCUBRE MÁS</span>
+                    <div class="scroll-arrow"></div>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Sección de pasos con estilo neón -->
+    <section id="process" class="section-process">
+        <div class="container">
+            <h2 class="section-title">Mi <span>proceso</span> profesional</h2>
+            <div class="process-grid">
+                <div class="process-step neon-card">
+                    <span class="step-number">01</span>
+                    <h3 class="step-title">Diagnóstico</h3>
+                    <p class="step-description">
+                        Analizo tu infraestructura para identificar vulnerabilidades y puntos críticos.
+                        Sin rodeos, solo datos.
+                    </p>
+                </div>
+                <div class="process-step neon-card">
+                    <span class="step-number">02</span>
+                    <h3 class="step-title">Estrategia</h3>
+                    <p class="step-description">
+                        Diseño soluciones personalizadas que equilibran seguridad y rendimiento,
+                        siempre con visión de futuro.
+                    </p>
+                </div>
+                <div class="process-step neon-card">
+                    <span class="step-number">03</span>
+                    <h3 class="step-title">Ejecución</h3>
+                    <p class="step-description">
+                        Implemento configuraciones, parches y políticas con precisión quirúrgica,
+                        minimizando tiempos de inactividad.
+                    </p>
+                </div>
+                <div class="process-step neon-card">
+                    <span class="step-number">04</span>
+                    <h3 class="step-title">Monitoreo</h3>
+                    <p class="step-description">
+                        Mantengo vigilancia constante y optimización continua para garantizar
+                        la resiliencia a largo plazo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="section-cta">
+        <div class="container">
+            <h2>¿Hablamos de seguridad?</h2>
+            <a href="/WEB_PERSONAL/pages/contact.html" class="btn btn-primary glow">Contáctame</a>
+        </div>
+    </section>
+
     <div id="footer"></div>
 
+    <!-- Scripts -->
     <script src="/WEB_PERSONAL/assets/js/particles.js"></script>
     <script src="/WEB_PERSONAL/assets/js/script.js"></script>
 </body>
