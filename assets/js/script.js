@@ -1,10 +1,13 @@
-// Carga de componentes (navbar y footer)
+// Carga de componentes (navbar y footer) con rutas absolutas
 document.addEventListener('DOMContentLoaded', function() {
     const navbarContainer = document.getElementById('navbar');
     const footerContainer = document.getElementById('footer');
 
+    // Ruta base para GitHub Pages
+    const basePath = '/WEB_PERSONAL';
+
     // Cargar navbar
-    fetch('../components/navbar.html')
+    fetch(basePath + '/components/navbar.html')
         .then(response => response.text())
         .then(data => {
             navbarContainer.innerHTML = data;
@@ -30,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(err => console.warn('Error al cargar navbar:', err));
 
     // Cargar footer
-    fetch('../components/footer.html')
+    fetch(basePath + '/components/footer.html')
         .then(response => response.text())
         .then(data => {
             footerContainer.innerHTML = data;
