@@ -24,7 +24,7 @@
     opacity: 0;
 }
 
-/* ===== REVELADO AL HACER SCROLL ===== */
+/* ===== REVELADO AL SCROLL ===== */
 .reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -36,7 +36,7 @@
     transform: translateY(0);
 }
 
-/* ===== TIPO DE ESCRITURA (typewriter) ===== */
+/* ===== TIPO DE ESCRITURA ===== */
 .typewriter {
     overflow: hidden;
     border-right: 3px solid #38bdf8;
@@ -53,67 +53,4 @@
 
 @keyframes blink {
     50% { border-color: transparent; }
-}
-
-/* ===== EFECTO NEÓN EN BOTONES ===== */
-.btn-glow {
-    animation: pulseGlow 2s infinite alternate;
-}
-
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
-    100% { box-shadow: 0 0 60px rgba(56, 189, 248, 0.8); }
-}
-
-/* ===== FONDO GRADIENTE ANIMADO (ya está en style.css, pero lo reforzamos) ===== */
-/* El gradiente se define en body::before en style.css */
-
-/* ===== EFECTO DE CARGA DE PÁGINA ===== */
-body {
-    animation: pageFadeIn 0.8s ease;
-}
-
-@keyframes pageFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-/* ===== ANIMACIONES DE ENTRADA CON GSAP (se disparan desde JS) ===== */
-/* Estas son para que los elementos aparezcan con efecto glitch */
-.glitch-reveal {
-    opacity: 0;
-}
-/* ===== EFECTO DE SCRAMBLE EN TEXTO ===== */
-.scramble-text {
-    transition: all 0.3s ease;
-}
-.scramble-text:hover {
-    animation: textScramble 0.5s infinite;
-}
-@keyframes textScramble {
-    0% { opacity: 1; }
-    10% { opacity: 0; transform: skew(5deg); }
-    20% { opacity: 1; transform: skew(-5deg); }
-    30% { opacity: 0; transform: skew(2deg); }
-    40% { opacity: 1; transform: skew(-2deg); }
-    50% { opacity: 0; transform: skew(0deg); }
-    60% { opacity: 1; transform: skew(0deg); }
-    100% { opacity: 1; }
-}
-/* ===== EFECTO DE PARALLAX PARA TARJETAS 3D ===== */
-.card-3d {
-    transition: transform 0.3s ease;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-.card-3d:hover {
-    transform: rotateY(5deg) rotateX(2deg) scale(1.02);
-}
-/* ===== EFECTO DE NEÓN PULSANTE ===== */
-@keyframes neonPulse {
-    0% { box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
-    50% { box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff; }
-    100% { box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
-}
-.neon-pulse {
-    animation: neonPulse 2s infinite;
 }
