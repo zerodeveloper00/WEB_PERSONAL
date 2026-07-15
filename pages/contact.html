@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="/WEB_PERSONAL/assets/css/style.css" />
     <link rel="stylesheet" href="/WEB_PERSONAL/assets/css/responsive.css" />
     <link rel="stylesheet" href="/WEB_PERSONAL/assets/css/animations.css" />
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
     <canvas id="particles-canvas"></canvas>
@@ -19,27 +21,77 @@
         <div class="container">
             <h2 class="page-title reveal">Contacto</h2>
             <div class="contact-wrapper glass-card reveal">
+                <!-- Columna izquierda: información -->
                 <div class="contact-info">
-                    <p><strong>Email:</strong> josedanielcortezpalacios@gmail.com</p>
-                    <p><strong>Teléfono:</strong> +51 931 050 681</p>
-                    <p><strong>Ubicación:</strong> Piura, Perú</p>
-                    <p>
-                        <a href="/WEB_PERSONAL/assets/cv/cv-daniel-cortez.pdf" download class="btn btn-primary btn-glow" style="display:inline-block; margin-top:1rem;">
-                            📄 Descargar CV (PDF)
+                    <h3><i class="fas fa-paper-plane" style="color: #00e5ff;"></i> Hablemos</h3>
+                    <p>¿Tienes un proyecto en mente o necesitas ayuda con tu seguridad? Escríbeme y te responderé lo antes posible.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>josedanielcortezpalacios@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+51 931 050 681</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Piura, Perú</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="#" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                    <div class="cv-download">
+                        <a href="/WEB_PERSONAL/assets/cv/cv-daniel-cortez.pdf" download class="btn btn-primary glow">
+                            <i class="fas fa-file-pdf"></i> Descargar CV (PDF)
                         </a>
-                    </p>
+                    </div>
                 </div>
+
+                <!-- Columna derecha: formulario -->
                 <form id="contact-form" class="contact-form">
                     <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portafolio Web" />
                     <input type="hidden" name="_captcha" value="true" />
-                    <input type="text" name="nombre" placeholder="Tu nombre" required />
-                    <input type="email" name="email" placeholder="Tu correo electrónico" required />
-                    <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                    <button type="submit" class="btn btn-primary btn-glow" id="submit-btn">
-                        Enviar mensaje 🚀
+
+                    <div class="form-group">
+                        <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Correo</label>
+                        <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje"><i class="fas fa-comment"></i> Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary glow" id="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Enviar mensaje
                     </button>
-                    <div id="form-status" style="margin-top: 1.5rem; text-align: center; font-weight: 600;"></div>
+
+                    <div id="form-status"></div>
                 </form>
+            </div>
+
+            <!-- Mapa (opcional, pero da un toque profesional) -->
+            <div class="map-container reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126919.98662154032!2d-80.69418191640625!3d-5.194447999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904a1c7a1d8b4b3f%3A0x8b9b4b1b1b1b1b1b!2sPiura%2C%20Perú!5e0!3m2!1ses!2spe!4v1700000000000" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0; border-radius: 16px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </main>
@@ -48,19 +100,25 @@
 
     <script src="/WEB_PERSONAL/assets/js/particles.js"></script>
     <script src="/WEB_PERSONAL/assets/js/script.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contact-form');
             const statusDiv = document.getElementById('form-status');
             const submitBtn = document.getElementById('submit-btn');
-            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqvzvad'; 
+
+            // Reemplaza con tu endpoint de Formspree
+            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqvzvad';
 
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 submitBtn.disabled = true;
-                submitBtn.textContent = 'Enviando... ⏳';
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
                 statusDiv.innerHTML = '';
+                statusDiv.className = '';
+
                 const formData = new FormData(form);
+
                 fetch(FORMSPREE_ENDPOINT, {
                     method: 'POST',
                     body: formData,
@@ -69,20 +127,22 @@
                 .then(response => {
                     if (response.ok) {
                         statusDiv.innerHTML = '✅ ¡Mensaje enviado con éxito! Te responderé pronto.';
-                        statusDiv.style.color = '#4ade80';
+                        statusDiv.className = 'success';
                         form.reset();
                     } else {
-                        statusDiv.innerHTML = '❌ Ocurrió un error. Intenta de nuevo.';
-                        statusDiv.style.color = '#f87171';
+                        response.json().then(data => {
+                            statusDiv.innerHTML = '❌ Error: ' + (data.error || 'Intenta de nuevo.');
+                            statusDiv.className = 'error';
+                        });
                     }
                 })
-                .catch(() => {
+                .catch(error => {
                     statusDiv.innerHTML = '❌ Error de conexión. Revisa tu internet.';
-                    statusDiv.style.color = '#f87171';
+                    statusDiv.className = 'error';
                 })
                 .finally(() => {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Enviar mensaje 🚀';
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mensaje';
                 });
             });
         });
